@@ -8,12 +8,15 @@ class PagesController < ApplicationController
 
   def about
     render :about
-    @header = "This is the welcome page"
+    @header = "This is the about page"
   end
 
   def contest
-    render :contest
-    @header = "This is the welcome page"
+
+    # render :contest
+    # @header = "This is the contest page"
+    flash[:notice]= "Sorry, the contest has ended"
+    redirect_to "/welcome"
   end
 
   def kitten
